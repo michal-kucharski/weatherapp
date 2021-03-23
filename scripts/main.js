@@ -67,11 +67,11 @@ const displayWeatherData = data => {
 
     const currentTemp = Math.round(weather.the_temp);
     const maxTemp = Math.round(weather.max_temp);
-    const minTemp = Math.round(weather.min_temp)
+    const minTemp = Math.round(weather.min_temp);
 
     viewElems.weatherCurrentTemp.innerText = `Current temperature: ${currentTemp}°C`;
-    viewElems.weatherMaxTemp.innerText = `Max temperature: ${maxTemp}°C`
-    viewElems.weatherMinTemp.innerText = `Min temperature: ${minTemp}°C`
+    viewElems.weatherMaxTemp.innerText = `Max temperature: ${maxTemp}°C`;
+    viewElems.weatherMinTemp.innerText = `Min temperature: ${minTemp}°C`;
 
 }
 
@@ -101,4 +101,4 @@ const returnToSearch = () => {
     }, 500);
 }
 
-document.addEventListener('DOMContentLoaded', initializeApp)
+document.addEventListener('DOMContentLoaded', initializeApp);
