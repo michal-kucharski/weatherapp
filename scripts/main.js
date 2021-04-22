@@ -30,6 +30,10 @@ class WeatherApp {
             getWeatherByCity(query)
             .then(data => {
                 this.displayWeatherData(data);
+            }).catch(() => {
+                this.fadeInOut();
+                this.viewElems.errorText.classList.remove('hidden');            
+                this.viewElems.searchInput.style.borderColor = 'red';                
             });
         }
     }
@@ -53,6 +57,10 @@ class WeatherApp {
     }
 
     returnToSearch = () => {
+        if(errorText.classList.length === 0) {
+            this.viewElems.errorText.classList.add('hidden');
+            this.viewElems.searchInput.style.borderColor = 'inherit';
+        }
         this.fadeInOut();
         setTimeout(()=> {
             this.switchView();
