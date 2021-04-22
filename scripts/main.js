@@ -33,7 +33,8 @@ class WeatherApp {
             }).catch(() => {
                 this.fadeInOut();
                 this.viewElems.errorText.classList.remove('hidden');            
-                this.viewElems.searchInput.style.borderColor = 'red';                
+                this.viewElems.searchInput.style.borderColor = 'red';
+                this.clearInput();               
             });
         }
     }
@@ -61,6 +62,7 @@ class WeatherApp {
             this.viewElems.errorText.classList.add('hidden');
             this.viewElems.searchInput.style.borderColor = 'inherit';
         }
+        this.clearInput();
         this.fadeInOut();
         setTimeout(()=> {
             this.switchView();
@@ -85,7 +87,10 @@ class WeatherApp {
         this.viewElems.weatherCurrentTemp.innerText = `Current temperature: ${currentTemp}°C`;
         this.viewElems.weatherMaxTemp.innerText = `Max temperature: ${maxTemp}°C`;
         this.viewElems.weatherMinTemp.innerText = `Min temperature: ${minTemp}°C`;
-    
+    }
+
+    clearInput = () => {
+        this.viewElems.searchInput.value = '';  
     }
 }
 
